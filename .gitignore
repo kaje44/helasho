@@ -1,1 +1,9 @@
 tags
+Makefile
+/zdroje*
+/doc*
+/img*
+/bibliothek
+helasho.pro
+helasho.qrc
+.directory

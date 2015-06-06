@@ -3,7 +3,7 @@
 **                                                                  **
 **  Erstellt am: st 3. června 2015 06:33:32                         **
 **                                                                  **
-**  Geändert am: Pá 05.čen.2015 12:58:06                            **
+**  Geändert am: So 06.čen.2015 14:42:15                            **
 *********************************************************************/
 
 
@@ -14,6 +14,7 @@
 
 #include <QWidget>
 
+class BuyModel;
 class CustomModel;
 class CustomItem;
 
@@ -22,7 +23,8 @@ class CustomItem;
 class BuyForm : public QWidget , private Ui_BuyForm {
  	Q_OBJECT
  private:
-	CustomModel  *m_sm;
+	BuyModel  *m_bm;
+	CustomModel  *m_cm;
 	QAction *actLoginStamm,*actLoginAnon;
 	QAction *actAddCredit, *actAddBuy, *actDelBuy, *actCountBuy;
 

@@ -3,11 +3,12 @@
 **                                                                  **
 **  Erstellt am: st 3. června 2015 06:33:32                         **
 **                                                                  **
-**  Geändert am: Pá 05.čen.2015 12:59:13                            **
+**  Geändert am: So 06.čen.2015 14:43:19                            **
 *********************************************************************/
 
 #include "loginanondlg.h"
 #include "passworddlg.h"
+#include "buymodel.h"
 #include "customitem.h"
 #include "custommodel.h"
 
@@ -21,9 +22,11 @@ BuyForm::BuyForm(QWidget *p_parent):QWidget(p_parent) {
     p_sizes << 100 << 400;
     splitter->setSizes(p_sizes);
 
+	m_bm = new BuyModel(this);
+	tableView_2->setModel(m_bm);
 
-	m_sm = new CustomModel(this);
-	listView->setModel(m_sm);
+	m_cm = new CustomModel(this);
+	listView->setModel(m_cm);
 	connect(listView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), 
       							  this,   SLOT(listChanged(QItemSelection,QItemSelection)));
 
@@ -108,7 +111,7 @@ void BuyForm::meActLoginAnon() {
 //------------------------------------------------------------------------------------------------- 
 void BuyForm::addLogin( QString p_key, QString p_id ) {
 	
-	m_sm->addCustom(p_key,p_id);
+	m_cm->addCustom(p_key,p_id);
 
 }
 
@@ -121,7 +124,7 @@ void BuyForm::listChanged( QItemSelection *p_sel, QItemSelection *p_dsel ) {
 	} else {
 		QModelIndex mi = p_sel->indexes().first();	
 		if ( mi.isValid()) {
-			CustomItem *si = (CustomItem *) m_sm->itemFromIndex(mi);
+			CustomItem *si = (CustomItem *) m_cm->itemFromIndex(mi);
 			setValue(si);
 		};//if
 	};//if

@@ -3,7 +3,7 @@
 **                                                                  **
 **  Erstellt am: pá 5. června 2015 13:01:25                         **
 **                                                                  **
-**  Geändert am:                             **
+**  Geändert am: So 06.čen.2015 14:37:22                            **
 *********************************************************************/
 
 
@@ -17,7 +17,7 @@
 class ShopModel : public QStandardItemModel {
  private:
  public:
-	ShopModel(QWidget * parent);
+	ShopModel(QObject * parent);
 };
 
 #endif

@@ -1,9 +1,9 @@
 /*********************************************************************
-**  KaJe															**
-**																	**
-**  Vytvořen: 05.02.2008 - 18:57:16									**
-**																	**
-**  Poslední úpravy: Pá 05.čen.2015 10:05:01                        **
+**  KaJe 2015                                                       **
+**                                                                  **
+**  Erstellt am: So 06.čen.2015 14:29:44                            **
+**                                                                  **
+**  Geändert am: So 06.čen.2015 14:29:50                            **
 **********************************************************************/
 
 #include "kjsyslog.h"
@@ -22,7 +22,7 @@
 MainForm::MainForm() : KjMainWindow() {
 	setupUi(this);
 		
-//	createInfo("Helasho","$build v0.0.0$", ":img/munin-ikona.png");
+//	createInfo("Helasho","$build v1.0.4$", ":img/munin-ikona.png");
 
 	tabWidget->addTab(new BuyForm(this),QIcon(":img/help-donate.png"),"Prodej");
 	tabWidget->addTab(new ReportForm(this),QIcon(":/img/edit-select-all.png"),"Přehled");

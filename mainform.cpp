@@ -22,7 +22,7 @@
 MainForm::MainForm() : KjMainWindow() {
 	setupUi(this);
 		
-//	createInfo("Helasho","$build v1.0.7$", ":img/munin-ikona.png");
+//	createInfo("Helasho","$build v1.0.8$", ":img/munin-ikona.png");
 
 	tabWidget->addTab(new BuyForm(this),QIcon(":img/help-donate.png"),"Prodej");
 	tabWidget->addTab(new ReportForm(this),QIcon(":/img/edit-select-all.png"),"Přehled");
